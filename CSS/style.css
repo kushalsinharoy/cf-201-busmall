@@ -1,0 +1,132 @@
+/* Google CSS Styles 
+font-family: 'PT Sans', sans-serif;
+font-family: 'Dosis', sans-serif;
+font-family: 'Karla', sans-serif;
+font-family: 'Bree Serif', serif;
+font-family: 'Lobster', cursive;
+*/
+
+body {
+    background-image: url("../img/backgroundImage.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+h1 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 250%;
+  font-weight: bolder;
+  padding: 10px;
+  text-align: center;
+  text-shadow: rgb(189, 111, 39);
+  color: white;
+}
+
+h2 {
+    margin: 5px;
+    font-family: 'Karla', sans-serif;
+    font-size: 180%;
+    clear: both;
+    font-weight: bold;
+    color: white;
+}
+
+p {
+    margin: 20px;
+    font-family: 'Karla', sans-serif;
+    font-size: 105%;
+    opacity: 0.5;
+    color: white;
+    line-height: 1.5;
+}
+
+.productsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-style: groove;
+}
+
+.productbox1 {
+  display: flex;
+  width: 30%; /*use percentages*/
+  height: 30%;
+}
+
+.productbox2 {
+  display: flex;
+  width: 30%;
+  height: 30%;
+}
+
+.productbox3 {
+  display: flex;
+  width: 30%;
+  height: 30%;
+}
+
+.productbox > img {
+  width: 250px;
+  height: auto;
+  margin: auto;
+  border-style: solid;
+}
+
+.resultsContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+#productdetailstable {
+    margin: 40px;
+    font-family: 'Karla', sans-serif;
+    border-collapse: collapse;
+    clear: both;
+    color: white;
+    padding: 10px;
+  }
+  
+#productdetailstable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#productdetailstable tr {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#productdetailstable th{
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+  
+#productdetailstable tr:nth-child(even){
+    background-color: black;
+    opacity: 0.5;
+}
+
+#productdetailstable tr:nth-child(odd){
+    background-color: black;
+    opacity: 0.5;
+    padding: 10px;
+}
+
+#productdetailstable tr:first-child{
+    color: white;
+    padding: 10px;
+}
+
+#productdetailstable tr:hover {
+    background-color: white;
+    color: black
+ }

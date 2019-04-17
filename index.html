@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>BusMall Market Research Application</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bree+Serif|Dosis|Karla|Lobster|PT+Sans"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>BusMall Market Research</h1>
+    <h2>Instructions</h2>
+    <p>
+      Hello Participant, thank you for your time today. You will be shown a set
+      of three products at a time in your browser for a certain number of
+      rounds. In each set of products, please click on the product you would be
+      most likely to purchase. Please keep in mind to answer honestly as your
+      results and feedback will have an influence on which products could
+      eventually be available for sale in the BusMall catalog. Thank you!
+    </p>
+    <section class="productsContainer">
+      <section class="productbox">
+        <img src="" id="productLeft" class="product1" />
+      </section>
+      <section class="productbox">
+        <img src="" id="productCenter" class="product2" />
+      </section>
+      <section class="productbox">
+        <img src="" id="productRight" class="product3" />
+      </section>
+    </section>
+
+    <h2>Final Results</h2>
+    <p>
+        The below table shows the final results based on the clicks entered in a single session.
+    </p>
+    <section id="results">
+            <table id="productDetailsTable">
+                <thead>
+                    <th>Product Name</th>
+                    <th>Clicks</th>
+                    <th>Times Displayed</th>
+                </thead>
+                <tbody id="product_details_table">
+                </tbody>
+            </table>
+        </section>
+  </body>
+
+  <script src="app.js"></script>
+</html>
