@@ -13,10 +13,7 @@ catalog based on user selection.
  * @param {*} numberOfClicks
  * @param {*} numberOfTimesDisplayed
  */
-function ProductDetails(
-  productName,
-  filePath
-) {
+function ProductDetails(productName, filePath) {
   this.productName = productName;
   this.filePath = filePath;
   this.numberOfClicks = 0;
@@ -26,6 +23,9 @@ function ProductDetails(
 //Create instances of the different Products available.
 var bag = new ProductDetails('bag', 'img/bag.jpg');
 var banana = new ProductDetails('banana', 'img/banana.jpg');
+var bathroom = new ProductDetails('bathroom', 'img/bathroom.jpg');
+var breakfast = new ProductDetails('breakfast', 'img/breakfast.jpg');
+var bubblegum = new ProductDetails('bubblegum', 'img/bubblegum.jpg');
 var boots = new ProductDetails('boots', 'img/boots.jpg');
 var shark = new ProductDetails('shark', 'img/shark.jpg');
 var sweep = new ProductDetails('sweep', 'img/sweep.png');
@@ -38,11 +38,16 @@ var usb = new ProductDetails('usb', 'img/usb.gif');
 var dragon = new ProductDetails('dragon', 'img/dragon.jpg');
 var pen = new ProductDetails('pen', 'img/pen.jpg');
 var scissors = new ProductDetails('scissors', 'img/scissors.jpg');
+var dogduck = new ProductDetails('dogduck', 'img/dog-duck.jpg');
+var tauntaun = new ProductDetails('tauntaun', 'img/tauntaun.jpg');
 
 // Create an array of Objects.
 var productsList = [
   bag,
   banana,
+  bathroom,
+  breakfast,
+  bubblegum,
   boots,
   chair,
   cthulhu,
@@ -54,7 +59,9 @@ var productsList = [
   unicorn,
   usb,
   watercan,
-  wineglass
+  wineglass,
+  dogduck,
+  tauntaun
 ];
 
 // Assigning variable names to each product displayed
@@ -158,6 +165,56 @@ function getImageGenerator() {
 }
 
 var productDetailsTable = document.getElementById('product_details_table');
+var results = document.getElementById('results');
+
+// Hide the results until user clicks 25 times.
+results.style.display = 'None';
+
+/**
+ * Generate the chart based on the above voting data taken by user.
+ */
+function generateChart() {
+  var products = [];
+  for (var i = 0; i < productsList.length; i++) {
+    products.push(productsList[i].productName);
+  }
+  var clicks = [];
+  for (var j = 0; j < productsList.length; j++) {
+    clicks.push(productsList[j].numberOfClicks);
+  }
+  var timesDisplayed = [];
+  for (var k = 0; k < productsList.length; k++) {
+    timesDisplayed.push(productsList[k].numberOfTimesDisplayed);
+  }
+
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+
+  var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: products,
+      datasets: [
+        {
+          backgroundColor: '#3e95cd',
+          data: clicks,
+          label: 'Number of Clicks'
+        },
+        {
+          backgroundColor: '#8e5ea2',
+          data: timesDisplayed,
+          label: 'Number of Times Displayed'
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Voting Chart'
+      }
+    }
+  });
+}
 
 /**
  * Table displaying the final results.
@@ -166,6 +223,8 @@ function displayResults() {
   productLeft.removeEventListener('click', handleClickOnProductLeft);
   productCenter.removeEventListener('click', handleClickOnProductCenter);
   productRight.removeEventListener('click', handleClickOnProductRight);
+
+  results.style.display = 'Block';
 
   var row;
   for (var i = 0; i < productsList.length; i++) {
@@ -183,4 +242,7 @@ function displayResults() {
     console.log('Create Table' + productsList[i].productName);
     productDetailsTable.appendChild(row);
   }
+
+  // Call the generate Chart
+  generateChart();
 }
