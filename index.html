@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>BusMall Market Research Application</title>
@@ -30,22 +31,36 @@
       </section>
     </section>
 
-    <h2>Final Results</h2>
-    <p>
-        The below table shows the final results based on the clicks entered in a single session.
-    </p>
     <section id="results">
-            <table id="productDetailsTable">
-                <thead>
-                    <th>Product Name</th>
-                    <th>Clicks</th>
-                    <th>Times Displayed</th>
-                </thead>
-                <tbody id="product_details_table">
-                </tbody>
-            </table>
-        </section>
+      <h2>Voting Chart</h2>
+      <p>
+        The below chart shows the final results based on the clicks entered in a
+        single session.
+      </p>
+
+      <section id="resultschart">
+        <canvas id="canvas" width="500" height="200"></canvas>
+      </section>
+
+      <h2>Voting Table</h2>
+      <p>
+        The below table shows the final results based on the clicks entered in a
+        single session.
+      </p>
+
+      <section id="resultstable">
+        <table id="productDetailsTable">
+          <thead>
+            <th>Product Name</th>
+            <th>Clicks</th>
+            <th>Times Displayed</th>
+          </thead>
+          <tbody id="product_details_table"></tbody>
+        </table>
+      </section>
+    </section>
   </body>
 
+  <script type="text/JavaScript" src="chart.js"></script>
   <script src="app.js"></script>
 </html>

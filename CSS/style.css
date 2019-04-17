@@ -30,6 +30,7 @@ h2 {
     clear: both;
     font-weight: bold;
     color: white;
+    padding: 10px;
 }
 
 p {
@@ -73,20 +74,7 @@ p {
   border-style: solid;
 }
 
-.resultsContainer {
-  display: flex;
-  flex-direction: row;
-}
-
-button {
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  font-size: 1.5em;
-}
-
-#productdetailstable {
+#resultstable {
     margin: 40px;
     font-family: 'Karla', sans-serif;
     border-collapse: collapse;
@@ -95,38 +83,43 @@ button {
     padding: 10px;
   }
   
-#productdetailstable td {
+#resultstable td {
     border: 1px solid #ddd;
     padding: 10px;
 }
 
-#productdetailstable tr {
+#resultstable tr {
     border: 1px solid #ddd;
     padding: 10px;
 }
 
-#productdetailstable th{
+#resultstable th{
     border: 1px solid #ddd;
     padding: 10px;
 }
   
-#productdetailstable tr:nth-child(even){
+#resultstable tr:nth-child(even){
     background-color: black;
     opacity: 0.5;
 }
 
-#productdetailstable tr:nth-child(odd){
+#resultstable tr:nth-child(odd){
     background-color: black;
     opacity: 0.5;
     padding: 10px;
 }
 
-#productdetailstable tr:first-child{
+#resultstable tr:first-child{
     color: white;
     padding: 10px;
 }
 
-#productdetailstable tr:hover {
+#resultstable tr:hover {
     background-color: white;
     color: black
  }
+
+#resultschart {
+    display: flex;
+    justify-content: center;
+}
