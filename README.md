@@ -11,3 +11,8 @@ Create CF-201 busmall project (https://github.com/codefellows/amazon-201d1/tree/
 2nd Commit
 
 - Create a chart to store all the click data.
+
+3rd Commit
+
+- Add local storage
+- Deploy complete website.

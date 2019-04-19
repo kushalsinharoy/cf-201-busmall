@@ -21,25 +21,25 @@ function ProductDetails(productName, filePath) {
 }
 
 //Create instances of the different Products available.
-var bag = new ProductDetails('bag', 'img/bag.jpg');
-var banana = new ProductDetails('banana', 'img/banana.jpg');
-var bathroom = new ProductDetails('bathroom', 'img/bathroom.jpg');
-var breakfast = new ProductDetails('breakfast', 'img/breakfast.jpg');
-var bubblegum = new ProductDetails('bubblegum', 'img/bubblegum.jpg');
-var boots = new ProductDetails('boots', 'img/boots.jpg');
-var shark = new ProductDetails('shark', 'img/shark.jpg');
-var sweep = new ProductDetails('sweep', 'img/sweep.png');
-var watercan = new ProductDetails('water can', 'img/water-can.jpg');
-var wineglass = new ProductDetails('wine glass', 'img/wine-glass.jpg');
-var chair = new ProductDetails('chair', 'img/chair.jpg');
-var cthulhu = new ProductDetails('cthulhu', 'img/cthulhu.jpg');
-var unicorn = new ProductDetails('unicorn', 'img/unicorn.jpg');
-var usb = new ProductDetails('usb', 'img/usb.gif');
-var dragon = new ProductDetails('dragon', 'img/dragon.jpg');
-var pen = new ProductDetails('pen', 'img/pen.jpg');
-var scissors = new ProductDetails('scissors', 'img/scissors.jpg');
-var dogduck = new ProductDetails('dogduck', 'img/dog-duck.jpg');
-var tauntaun = new ProductDetails('tauntaun', 'img/tauntaun.jpg');
+var bag = new ProductDetails('bag', 'IMG/bag.jpg');
+var banana = new ProductDetails('banana', 'IMG/banana.jpg');
+var bathroom = new ProductDetails('bathroom', 'IMG/bathroom.jpg');
+var breakfast = new ProductDetails('breakfast', 'IMG/breakfast.jpg');
+var bubblegum = new ProductDetails('bubblegum', 'IMG/bubblegum.jpg');
+var boots = new ProductDetails('boots', 'IMG/boots.jpg');
+var shark = new ProductDetails('shark', 'IMG/shark.jpg');
+var sweep = new ProductDetails('sweep', 'IMG/sweep.png');
+var watercan = new ProductDetails('water can', 'IMG/water-can.jpg');
+var wineglass = new ProductDetails('wine glass', 'IMG/wine-glass.jpg');
+var chair = new ProductDetails('chair', 'IMG/chair.jpg');
+var cthulhu = new ProductDetails('cthulhu', 'IMG/cthulhu.jpg');
+var unicorn = new ProductDetails('unicorn', 'IMG/unicorn.jpg');
+var usb = new ProductDetails('usb', 'IMG/usb.gif');
+var dragon = new ProductDetails('dragon', 'IMG/dragon.jpg');
+var pen = new ProductDetails('pen', 'IMG/pen.jpg');
+var scissors = new ProductDetails('scissors', 'IMG/scissors.jpg');
+var dogduck = new ProductDetails('dogduck', 'IMG/dog-duck.jpg');
+var tauntaun = new ProductDetails('tauntaun', 'IMG/tauntaun.jpg');
 
 // Create an array of Objects.
 var productsList = [
