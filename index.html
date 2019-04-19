@@ -18,6 +18,8 @@
       most likely to purchase. Please keep in mind to answer honestly as your
       results and feedback will have an influence on which products could
       eventually be available for sale in the BusMall catalog. Thank you!
+      After 25 clicks, you will be able to see a chart which provides the details 
+      of your choices.
     </p>
     <section class="productsContainer">
       <section class="productbox">
@@ -30,6 +32,37 @@
         <img src="" id="productRight" class="product3" />
       </section>
     </section>
+
+    <h2>Additional Options</h2>
+    <p>
+      As a participant, you also can look at the data what you have voted for.
+      After the page refresh also you can view what you voted for. Please note
+      that if you want to restart the votes, you need to clean up the local
+      storage, and reset the page.
+    </p>
+    <ol type="1">
+      <li>
+        <b class="resetbutton">Reset:</b>
+        Refresh the complete page.(Same as refreshing a page)
+      </li>
+      <li>
+        <b class="previousdatabutton">Get Previous Data:</b> This allows you to
+        fetch the data which is available in the local storage. This will be
+        available after the page refresh also.
+      </li>
+      <li>
+        <b class="localbutton">Clear Local Storage:</b>
+        Clean up the local storage.
+      </li>
+    </ol>
+
+    <button class="button button1" id="reset">Reset Page</button>
+    <button class="button button2" id="persistantdata">
+      Get Previous Data
+    </button>
+    <button class="button button3" id="localstorageclear">
+      Clear Local Storage
+    </button>
 
     <section id="results">
       <h2>Voting Chart</h2>
@@ -60,6 +93,9 @@
       </section>
     </section>
   </body>
+  <div class="footer">
+        &copy;2019, Kushal Sinha Roy
+    </div>
 
   <script type="text/JavaScript" src="chart.js"></script>
   <script src="app.js"></script>
