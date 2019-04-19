@@ -68,6 +68,9 @@ var productsList = [
 var productLeft = document.getElementById('productLeft');
 var productCenter = document.getElementById('productCenter');
 var productRight = document.getElementById('productRight');
+var resetPage = document.getElementById('reset');
+var persistantData = document.getElementById('persistantdata');
+var localStorageClear = document.getElementById('localstorageclear');
 
 /* Create an event listener that
 1. responds to the click on an image,
@@ -86,15 +89,33 @@ var randomNumLeft,
 // Calls getImageGenerator() for 1st time load.
 getImageGenerator();
 
+// Get the items for local storage
+var clickData = localStorage.getItem('clickPersist');
+var productData = localStorage.getItem('chartPersist');
+
+// If the clicks exists, take the data from local storage.
+if (clickData && productData) {
+  totalClicks = parseInt(localStorage.getItem('clickPersist'));
+  productsList = JSON.parse(localStorage.getItem('chartPersist'));
+} else {
+  totalClicks = 0;
+}
+
 /**
  * Left product image click.
  */
 function handleClickOnProductLeft() {
+  if (totalClicks > 0) {
+    productsList = JSON.parse(localStorage.getItem('chartPersist'));
+    totalClicks = parseInt(localStorage.getItem('clickPersist'));
+  }
   productsList[randomNumLeft].numberOfClicks++;
   console.log('Left was clicked');
   getImageGenerator();
   totalClicks += 1;
   console.log('The total number of clicks is ' + totalClicks);
+  localStorage.setItem('chartPersist', JSON.stringify(productsList));
+  localStorage.setItem('clickPersist', totalClicks);
   if (totalClicks === 25) {
     displayResults();
   }
@@ -104,11 +125,17 @@ function handleClickOnProductLeft() {
  * Center product image click
  */
 function handleClickOnProductCenter() {
+  if (totalClicks > 0) {
+    productsList = JSON.parse(localStorage.getItem('chartPersist'));
+    totalClicks = parseInt(localStorage.getItem('clickPersist'));
+  }
   productsList[randomNumCenter].numberOfClicks++;
   console.log('Center was clicked');
   getImageGenerator();
   totalClicks += 1;
   console.log('The total number of clicks is ' + totalClicks);
+  localStorage.setItem('chartPersist', JSON.stringify(productsList));
+  localStorage.setItem('clickPersist', totalClicks);
   if (totalClicks === 25) {
     displayResults();
   }
@@ -118,11 +145,17 @@ function handleClickOnProductCenter() {
  * Right product image click.
  */
 function handleClickOnProductRight() {
+  if (totalClicks > 0) {
+    productsList = JSON.parse(localStorage.getItem('chartPersist'));
+    totalClicks = parseInt(localStorage.getItem('clickPersist'));
+  }
   productsList[randomNumRight].numberOfClicks++;
   console.log('Right was clicked');
   getImageGenerator();
   totalClicks += 1;
   console.log('The total number of clicks is ' + totalClicks);
+  localStorage.setItem('chartPersist', JSON.stringify(productsList));
+  localStorage.setItem('clickPersist', totalClicks);
   if (totalClicks === 25) {
     displayResults();
   }
@@ -164,11 +197,17 @@ function getImageGenerator() {
   productsList[randomNumRight].numberOfTimesDisplayed++;
 }
 
+// Get Element for the voting table and graph
 var productDetailsTable = document.getElementById('product_details_table');
 var results = document.getElementById('results');
 
 // Hide the results until user clicks 25 times.
 results.style.display = 'None';
+
+//Add event listners for the Buttons
+resetPage.addEventListener('click', reloadPage);
+persistantData.addEventListener('click', displayResults);
+localStorageClear.addEventListener('click', clearLocalStorage);
 
 /**
  * Generate the chart based on the above voting data taken by user.
@@ -220,6 +259,9 @@ function generateChart() {
  * Table displaying the final results.
  */
 function displayResults() {
+  console.log('*** Total Clicks ***' + totalClicks);
+  console.log('*** Total Product ***' + productsList);
+
   productLeft.removeEventListener('click', handleClickOnProductLeft);
   productCenter.removeEventListener('click', handleClickOnProductCenter);
   productRight.removeEventListener('click', handleClickOnProductRight);
@@ -245,4 +287,22 @@ function displayResults() {
 
   // Call the generate Chart
   generateChart();
+}
+
+/**
+ * Reload Page - This does not clear local storage.
+ */
+function reloadPage() {
+  window.location.reload();
+}
+
+/**
+ * Clear Local storage
+ */
+function clearLocalStorage() {
+  console.log('Clearing local storage');
+  var clearLocalStorage = window.confirm("Local storage will be cleared. Are you sure?");
+    if(clearLocalStorage) {
+        localStorage.clear();
+    }
 }
